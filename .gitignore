@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Project
+input/
+output/
+scenes/
