@@ -1,36 +1,36 @@
-name: GitHub Actions Security
+name: GitHub Actions security
 
 on:
   pull_request:
+    paths:
+      - ".github/workflows/**"
+      - "aqua.yaml"
   push:
-    branches:
-      - main
+    branches: [main]
+    paths:
+      - ".github/workflows/**"
+      - "aqua.yaml"
 
 permissions:
   contents: read
 
 jobs:
-  actions-security:
-    name: Check workflows
+  scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-
-      - name: Install aqua tools
+      - name: Install security tools
         uses: aquaproj/aqua-installer@82d0e83878a8657c4a6f2ff1755d3bfbfc67f329 # v4.1.0
         with:
           aqua_version: v2.64.0
-
-      - parallel:
-          - name: Check action pinning
-            run: pinact run --check
-            env:
-              GITHUB_TOKEN: ${{ github.token }}
-
-          - name: Audit workflows
-            run: zizmor --format github .
-            env:
-              GH_TOKEN: ${{ github.token }}
+      - name: Check action pins
+        run: pinact run --check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Scan workflows
+        run: zizmor --format github .
+        env:
+          GH_TOKEN: ${{ github.token }}
