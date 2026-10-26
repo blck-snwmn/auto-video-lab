@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.13"
 
 [[package]]
@@ -37,11 +37,11 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "faster-whisper", specifier = ">=1.2.1" },
-    { name = "openai", specifier = ">=2.17.0" },
-    { name = "python-dotenv", specifier = ">=1.2.1" },
-    { name = "scenedetect", extras = ["opencv"], specifier = ">=0.6.7.1" },
-    { name = "silero-vad", specifier = ">=6.2.0" },
+    { name = "faster-whisper", specifier = "==1.2.1" },
+    { name = "openai", specifier = "==2.17.0" },
+    { name = "python-dotenv", specifier = "==1.2.2" },
+    { name = "scenedetect", extras = ["opencv"], specifier = "==0.6.7.1" },
+    { name = "silero-vad", specifier = "==6.2.0" },
 ]
 
 [[package]]
