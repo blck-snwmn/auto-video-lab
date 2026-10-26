@@ -11,3 +11,6 @@ dependencies = [
     "scenedetect[opencv]==0.6.7.1",
     "silero-vad==6.2.0",
 ]
+
+[tool.uv]
+exclude-newer = "7 days"
