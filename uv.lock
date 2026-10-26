@@ -35,7 +35,7 @@ dependencies = [
     { name = "faster-whisper" },
     { name = "openai" },
     { name = "python-dotenv" },
-    { name = "scenedetect" },
+    { name = "scenedetect", extra = ["opencv"] },
     { name = "silero-vad" },
 ]
 
@@ -44,7 +44,7 @@ requires-dist = [
     { name = "faster-whisper", specifier = "==1.2.1" },
     { name = "openai", specifier = "==3.35.1" },
     { name = "python-dotenv", specifier = "==1.2.2" },
-    { name = "scenedetect", extras = ["opencv"], specifier = "==0.7.2" },
+    { name = "scenedetect", extras = ["opencv"], specifier = "==0.6.7.1" },
     { name = "silero-vad", specifier = "==6.2.0" },
 ]
 
@@ -776,18 +776,22 @@ wheels = [
 
 [[package]]
 name = "scenedetect"
-version = "0.7.2"
+version = "0.6.7.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
     { name = "numpy" },
-    { name = "opencv-python" },
     { name = "platformdirs" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/97/8e/79fbe5db61cbfeacbaa70f3863d5ded2bc9f5ec9637a688e5541d7fd9fa6/scenedetect-0.7.2.tar.gz", hash = "sha256:5bd42e4543c5a6d27dc4c2158bf05298473e9d58fec48938c951f5409a4d103f", size = 274560, upload-time = "2026-10-12T05:18:46.305Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f0/b4/e77e1812ae89bc4864ff54efb6a8232eabebd471e372096cb711f03cca52/scenedetect-0.6.7.1.tar.gz", hash = "sha256:07833b0cb83a0106786a88136462580e9865e097f411f01501a688714c483a4e", size = 164208, upload-time = "2025-09-25T03:18:59.929Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/59/db/2a0701e48dcbe50f91f8ae186ebb275885ef820a5f9348ff0b52299e4def/scenedetect-0.7.2-py3-none-any.whl", hash = "sha256:953b89fe7e6b82a497c263e26245ad599b004aa7afa74814312980479a040641", size = 149715, upload-time = "2026-10-12T05:18:43.09Z" },
+    { url = "https://files.pythonhosted.org/packages/b1/5b/2294ea44b3b2264a50b82a55a3822837a04cb779c873fc168844f36f5b46/scenedetect-0.6.7.1-py3-none-any.whl", hash = "sha256:3808ef4436ab0fc6fee8a155e95759b42e2446c925c45746a82ff119be4eb3e1", size = 130860, upload-time = "2025-09-25T03:18:58.43Z" },
+]
+
+[package.optional-dependencies]
+opencv = [
+    { name = "opencv-python" },
 ]
 
 [[package]]
