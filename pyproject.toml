@@ -8,7 +8,7 @@ dependencies = [
     "faster-whisper==1.2.1",
     "openai==2.17.0",
     "python-dotenv==1.2.4",
-    "scenedetect[opencv]==0.6.7.1",
+    "scenedetect[opencv]==0.7.2",
     "silero-vad==6.2.3",
 ]
 
