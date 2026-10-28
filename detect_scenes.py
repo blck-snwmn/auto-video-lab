@@ -90,7 +90,7 @@ def main() -> None:
     # Step 2: Print summary
     print(f"Detected {len(scene_list)} scene(s):")
     for i, (start, end) in enumerate(scene_list):
-        duration = end.get_seconds() - start.get_seconds()
+        duration = end.seconds - start.seconds
         print(f"  [{i}] {start} - {end} (duration: {duration:.3f}s)")
 
     # Step 3: Split scenes
